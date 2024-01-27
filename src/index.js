@@ -62,7 +62,7 @@ function Header() {
   // const style = { color: "orangered", fontSize: "48px", textTransform: "Uppercase" };
   return (
     <header className="header">
-      <h1>Fast React Pizza Co. </h1>
+      <h1>Fast React Pizza Co. 🍕</h1>
     </header>
   );
 }
