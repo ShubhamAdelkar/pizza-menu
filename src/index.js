@@ -75,7 +75,7 @@ function Menu() {
 
   return (
     <main className="menu">
-      <h2 className="header">Our Menu</h2>
+      <h2>Our Menu</h2>
       {numsPizzas > 0 ? (
         <ul className="pizzas">
           {pizzaData.map((pizza) => (
