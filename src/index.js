@@ -70,11 +70,31 @@ function Header() {
 function Menu() {
   return (
     <main className="menu">
-      <h1>Our Menu</h1>
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <h2>Our Menu</h2>
+      <Pizza
+        name="Pizza Spinaci"
+        ingredients="Tomato, mozarella, spinach"
+        photoName="./pizzas/spinaci.jpg"
+        price="10"
+      />
+      <Pizza
+        name="Pizza Funghi"
+        ingredients="Tomato, mozarella, mushrooms, and onion"
+        price="12"
+        photoName="pizzas/funghi.jpg"
+      />
     </main>
+  );
+}
+
+function Pizza(props) {
+  return (
+    <div>
+      <img src={props.photoName} />
+      <h3>{props.name}</h3>
+      <p>{props.ingredients}</p>
+      <p>{props.price}</p>
+    </div>
   );
 }
 
@@ -83,24 +103,14 @@ function Footer() {
   const openHour = 11;
   const closeHour = 22;
   const isOpen = hour >= openHour && hour <= closeHour;
-  console.log(isOpen);
 
   return (
     <footer className="footer">
-      {new Date().toLocaleDateString()}. We're Currently Open
+      {new Date().toLocaleDateString()}.{" "}
+      {isOpen ? "We're Currently Open!" : "Sorry, We're Closed!"}
     </footer>
   );
   // return React.createElement("footer", null, "We're Curently Open!");
-}
-
-function Pizza() {
-  return (
-    <div>
-      <img src="./pizzas/spinaci.jpg" />
-      <h3>Pizza Spinachi</h3>
-      <p>Tomato, mozarella, spinach</p>
-    </div>
-  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
