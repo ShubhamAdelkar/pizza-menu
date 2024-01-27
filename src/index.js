@@ -68,14 +68,20 @@ function Header() {
 }
 
 function Menu() {
+  // new constants for pizza data.
+  const pizzas = pizzaData;
+  const numsPizzas = pizzas.length; // its length
+
   return (
     <main className="menu">
       <h2 className="header">Our Menu</h2>
-      <ul className="pizzas">
-        {pizzaData.map((pizza, index) => (
-          <Pizza key={index} pizzaObj={pizza} />
-        ))}
-      </ul>
+      {numsPizzas > 0 ? (
+        <ul className="pizzas">
+          {pizzaData.map((pizza) => (
+            <Pizza key={pizza.name} pizzaObj={pizza} />
+          ))}
+        </ul>
+      ) : null}
     </main>
   );
 }
