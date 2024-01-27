@@ -35,6 +35,7 @@ body {
 
 .header {
   align-self: stretch;
+  text-align: center;
 }
 
 .header h1 {
@@ -45,7 +46,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   font-size: 5.2rem;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 3px;
   position: relative;
   width: 100%;
@@ -61,7 +62,7 @@ body {
   background-color: #edc84b;
   position: absolute;
   top: calc(50% - 1px);
-} 
+}
 
 .header h1::before {
   left: 0;
@@ -76,7 +77,8 @@ body {
 .menu {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   gap: 4rem;
 }
 
@@ -91,7 +93,7 @@ body {
   font-weight: 500;
 }
 
-.menu > p {
+.menu>p {
   font-size: 1.5rem;
   text-align: center;
   line-height: 1.6;
