@@ -70,6 +70,7 @@ function Header() {
 function Menu() {
   // new constants for pizza data.
   const pizzas = pizzaData;
+  // const pizzas = [];
   const numsPizzas = pizzas.length; // its length
 
   return (
@@ -81,19 +82,23 @@ function Menu() {
             <Pizza key={pizza.name} pizzaObj={pizza} />
           ))}
         </ul>
-      ) : null}
+      ) : (
+        <p>We're currently working on our menu. please come back later!</p>
+      )}
     </main>
   );
 }
 
-function Pizza(props) {
+function Pizza({ pizzaObj }) {
+  if (pizzaObj.soldOut) return null;
+
   return (
     <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObjingredients}</p>
-        <span>{"$" + props.pizzaObj.price}</span>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{"$" + pizzaObj.price}</span>
       </div>
     </li>
   );
@@ -111,7 +116,10 @@ function Footer() {
         {isOpen ? (
           <p>We're open until {closeHour}:00. Come visit us or Order online.</p>
         ) : (
-          <p>Sorry, We're Closed!</p>
+          <p>
+            We're happy to welcome you between {openHour}: 00 and {closeHour}:
+            00
+          </p>
         )}
         <button className="btn">Order</button>
       </div>
