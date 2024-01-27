@@ -101,8 +101,14 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {new Date().toLocaleDateString()}.{" "}
-      {isOpen ? "We're Currently Open!" : "Sorry, We're Closed!"}
+      <div className="order">
+        {isOpen ? (
+          <p>We're open until {closeHour}:00. Come visit us or Order online.</p>
+        ) : (
+          <p>Sorry, We're Closed!</p>
+        )}
+        <button className="btn">Order</button>
+      </div>
     </footer>
   );
 }
