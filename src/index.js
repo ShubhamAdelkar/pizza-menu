@@ -62,7 +62,7 @@ function Header() {
   // const style = { color: "orangered", fontSize: "48px", textTransform: "Uppercase" };
   return (
     <header className="header">
-      <h1>Fast React Pizza Co. 🍕</h1>
+      <h1>Fast React Pizza🍕</h1>
     </header>
   );
 }
@@ -72,13 +72,13 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
       <Pizza
-        name="Pizza Spinaci"
+        name="Pizza Spinaci🍕"
         ingredients="Tomato, mozarella, spinach"
         photoName="./pizzas/spinaci.jpg"
         price="10"
       />
       <Pizza
-        name="Pizza Funghi"
+        name="Pizza Funghi🍕"
         ingredients="Tomato, mozarella, mushrooms, and onion"
         price="12"
         photoName="pizzas/funghi.jpg"
