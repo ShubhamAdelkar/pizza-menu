@@ -112,17 +112,16 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <div className="order">
-        {isOpen ? (
+      {isOpen ? (
+        <div className="order">
           <p>We're open until {closeHour}:00. Come visit us or Order online.</p>
-        ) : (
-          <p>
-            We're happy to welcome you between {openHour}: 00 and {closeHour}:
-            00
-          </p>
-        )}
-        <button className="btn">Order</button>
-      </div>
+          <button className="btn">Order</button>
+        </div>
+      ) : (
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00.
+        </p>
+      )}
     </footer>
   );
 }
